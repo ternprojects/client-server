@@ -1,3 +1,9 @@
+<?php
+    $counter = 0;
+    if(isset($_POST["number"]))
+        $counter = $_POST["number"] + 1;   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>    
@@ -9,7 +15,9 @@
 </head>
 <body>
     <h1>Counter</h1>
-    <input id="id_number" class="number" type="text" value="0" />
-    <input class="button" type="submit" onclick="document.getElementById('id_number').value++ "; />
+    <form method="post">
+        <input name="number" value="<?= $counter ?>" class="number" type="text" />
+        <input class="button" type="submit" />
+    </form>
 </body>
 </html>
